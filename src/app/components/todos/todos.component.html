@@ -1,19 +1,27 @@
-<div class="Container">
+<div class="container" style="text-align: center;">
 <div class="todos">
   <form (submit)="addTodo()">
-<input
-type="text"
-name="name"
-placeholder="enter todo..."
-class="input-todo"
-[(ngModel)]="inputTodo"
-/>
-<input type="submit" value="Add Todo" class="todo-submit">
+<div style= " display:flex ; justify-content:space-between ; " >
+  <input style="border-radius:5px"
+  type="text"
+  name="name"
+  placeholder="enter todo..."
+  class="input-todo"
+  [(ngModel)]="inputTodo"
+  />
+  <button type="submit" class="btn btn-info"  style="height: 28px ;">Add Todo</button>
+
+</div>
+
+
   </form>
-<div  *ngFor="let todo of  todos ; let i=index;" class="todo {{(todo.completed ? 'done' :'')}}">
+<br>
+<div  *ngFor="let todo of  todos ; let i=index;" class="todo {{(todo.completed ? 'done' :'')}}"
+style="display:flex ;justify-content:space-around" >
 <div class="id">{{i}}</div>
 <div class="content" (click)="toggleDone(i)">{{todo.content}}</div>
-<button class="delete" (click)="deleteTodo(i)">remove</button>
+
+<button class="btn btn-danger" (click)="deleteTodo(i)">remove</button>
 </div>
 </div>
 </div>
