@@ -1,58 +1,73 @@
-
-
+/* Base styles */
 .todo {
-	display: flex;
-	padding: 10px 15px;
-	background-color: #FFF;
-	border-bottom: 1px solid #DDD;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding: 10px;
 }
 
 .todo:nth-child(even) {
-	background-color: #EEE;
-}
-
-.todo:last-of-type {
-	border-bottom: 0;
-}
-
-.todo .id {
-	flex: 1 1 50px;
+  background-color: #e9ecef;
 }
 
 .todo .content {
-	flex: 1 1 100%;
+  flex: 1;
 }
 
 .todo.done .content {
-	text-decoration: line-through;
+  text-decoration: line-through;
 }
 
-.todo-input {
-	display: block;
-	width: 100%;
-	padding: 10px 15px;
-	appearance: none;
-	border: none;
-	background-color: #F3F3F3;
-	margin-top: 15px;
-	font-size: 20px;
-	outline: none;
+.input-todo {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  flex: 1;
+  margin-right: 10px;
 }
 
-.todo-submit {
-	display: block;
-	width: 100%;
-	max-width: 200px;
-	appearance: none;
-	border: none;
-	outline: none;
-	background: none;
+.btn {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-	background-color: #FE4880;
-	color: #FFF;
-	margin: 15px auto;
+.btn-info {
+  background-color: #17a2b8;
+  color: #fff;
+  margin-top: 4px;
+}
 
-	padding: 10px 15px;
-	font-size: 18px;
-	font-weight: 700;
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.todo-number {
+  flex: 0 0 30px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .todos {
+    flex-direction: column;
+  }
+
+  .todo {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    width: 30%;
+    margin-top: 10px;
+    font-size: 16px;
+  }
 }

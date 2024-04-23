@@ -1,4 +1,3 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import {Todo }from './../../models/Todo'
 @Component({
@@ -12,13 +11,7 @@ inputTodo:string="";;
   constructor() { }
 
   ngOnInit(): void {
-    this.todos=[
-      {content:'first todo',
-      completed:false,},
-
-      {content:'second todo',
-    completed:false}
-    ]
+    this.todos=[]
   }
 toggleDone(id:number){
 this.todos.map((v ,i)=>{
@@ -27,9 +20,13 @@ return v;
 })
 }
 deleteTodo(id:number){
-this.todos=this.todos.filter((v,i)=>i !==id);
+  if (confirm("Êtes-vous sûr de vouloir supprimer ce to-do list ?")){
+    this.todos=this.todos.filter((v,i)=>i !==id);
+
+  }
 }
 addTodo(){
+  if(this.inputTodo.length)
   this.todos.push({
     content:this.inputTodo,
     completed:false
